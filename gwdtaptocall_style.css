@@ -1,0 +1,9 @@
+gwd-taptocall {
+  cursor: pointer;
+  display: block;
+}
+
+gwd-taptocall > gwd-taparea {
+  width: 100%;
+  height: 100%;
+}

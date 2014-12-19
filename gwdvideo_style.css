@@ -1,0 +1,13 @@
+.has-fullscreen-gwd-video {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/**
+ * .gwd-lightbox comes from various gwd templates. It's unsightly to have the
+ * lightbox's dashed border when viewing an element at full screen from a
+ * previewed document, so this just removes the border.
+ */
+.gwd-lightbox.has-fullscreen-gwd-video {
+  border: none;
+}

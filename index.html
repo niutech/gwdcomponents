@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Web Designer Components Demo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- custom elements polyfill -->
+  <script src="custom.elements.min.js"></script>
+
+  <!-- gwd-taparea -->
+  <link href="gwdtaparea_style.css" rel="stylesheet">
+  <script src="gwdtaparea_min.js"></script>
+
+  <!-- gwd-gesture -->
+  <link href="gwdgesture_style.css" rel="stylesheet">
+  <script src="gwdgesture_min.js"></script>
+
+  <!-- gwd-taptocall -->
+  <link href="gwdtaptocall_style.css" rel="stylesheet">
+  <script src="gwdtaptocall_min.js"></script>
+
+  <!-- gwd-swipegallery -->
+  <link href="gwdswipegallery_style.css" rel="stylesheet">
+  <script src="gwdswipegallery_min.js"></script>
+
+  <!-- gwd-gallerynavigation -->
+  <link href="gwdgallerynavigation_style.css" rel="stylesheet">
+  <script src="gwdgallerynavigation_min.js"></script>
+
+  <!-- gwd-carouselgallery -->
+  <link href="gwdcarouselgallery_style.css" rel="stylesheet">
+  <script src="gwdcarouselgallery_min.js"></script>
+
+  <!-- gwd-360gallery -->
+  <link href="gwd360gallery_style.css" rel="stylesheet">
+  <script src="gwd360gallery_min.js"></script>
+
+  <!-- gwd-image in gallery -->
+  <link href="gwdimage_style.css" rel="stylesheet">
+  <script src="gwdimage_min.js"></script>
+
+  <!-- gwd-video -->
+  <link href="gwdvideo_style.css" rel="stylesheet">
+  <script src="gwdvideo_min.js"></script>
+
+  <!-- gwd-youtube -->
+  <link href="gwdyoutube_style.css" rel="stylesheet">
+  <script src="gwdyoutube_min.js"></script>
+
+  <!-- gwd-map -->
+  <link href="gwdmap_style.css" rel="stylesheet">
+  <script src="gwdmap_min.js"></script>
+
+  <!-- gwd-iframe -->
+  <script src="gwdiframe_min.js"></script>
+
+  <!-- gwd-audio -->
+  <script src="gwdaudio_min.js"></script>
+
+  <!-- gwd-page -->
+  <script src="gwdpage_min.js"></script>
+
+  <style type="text/css">
+    body {
+        font: 14px/20px Arial, sans-serif;
+    }
+    body > div {
+        float: left;
+        margin: 30px;
+    }
+    body > div > * {
+        position: relative;
+        display: block;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+<div>
+  gwd-taparea
+  <gwd-taparea></gwd-taparea>
+</div>
+<div>
+  gwd-gesture
+  <gwd-gesture touch-action="auto"></gwd-gesture>
+</div>
+<div>
+  gwd-taptocall
+  <gwd-taptocall number="0123456798"></gwd-taptocall>
+</div>
+<div>
+  gwd-swipegallery
+  <gwd-swipegallery id="swipegallery" scaling="cover" images="assets/sample.jpg,assets/sample2.jpg" start-frame="" transition-duration="" num-frames-to-display=""  frame-snap-interval="" autoplay="" has-navigation="" navigation-thumbnails="" navigation-highlight="" offset="" frame-width="" frame-height="" autoplay-duration=""></gwd-swipegallery>
+</div>
+<div>
+  gwd-gallerynavigation
+  <gwd-gallerynavigation for="swipegallery" highlight="" use-thumbnails=""></gwd-gallerynavigation>
+</div>
+<div>
+  gwd-carouselgallery
+  <gwd-carouselgallery navigation-highlight="" frame-width="" frame-height="" neighbor-rotation-y="" neighbor-translation-x="" neighbor-translation-y="" neighbor-translation-z=""  show-reflection="" navigation-thumbnails="" has-navigation="" autoplay="" start-frame="" transition-duration="" images="assets/sample.jpg,assets/sample2.jpg"></gwd-carouselgallery>
+</div>
+<div>
+  gwd-360gallery
+  <gwd-360gallery autoplay="" images="assets/sample.jpg,assets/sample2.jpg"></gwd-360gallery>
+</div>
+<div>
+  gwd-video
+  <video is="gwd-video" sources="http://techslides.com/demos/sample-videos/small.mp4" controls="" loop="" autoplay="" muted=""></video>
+</div>
+<div>
+  gwd-youtube
+  <gwd-youtube video-url="http://www.youtube.com/watch?v=fqULJBBEVQE" title="" muted="" loop="" pause-on-end="" start-position="" controls="show" theme="light" autoplay=""></gwd-youtube>
+</div>
+<div>
+  gwd-audio
+  <audio is="gwd-audio" sources="http://techslides.com/demos/samples/sample.wav" controls="" loop="" autoplay="" muted=""></audio>
+</div>
+<div>
+  gwd-map
+  <gwd-map query="" start-latitude="" start-longitude="" fusion-table-id="" client-id="" search-radius="40000" result-limit="" start-zoom="" marker-src="assets/marker_sprite.png"  gps-src="assets/location.png" msg-start-position-prompt="" msg-gps-button-label="" msg-manual-position-button-label="" msg-manual-position-prompt="" msg-manual-position-placeholder="" msg-geocode-failure=""  msg-no-results-found=""></gwd-map>
+</div>
+<div>
+  gwd-iframe
+  <iframe is="gwd-iframe" source="http://manda.com/iframe/textblock.html" scrolling="yes"></iframe>
+</div>
+<script>
+  var taparea = document.getElementsByTagName('gwd-taparea')[0];
+  var gesture = document.getElementsByTagName('gwd-gesture')[0];
+  taparea.addEventListener('action', function() {
+    alert('Tapped!');
+  });
+  gesture.addEventListener('swipeup', function() {
+    alert('Swiped up!');
+  });
+  gesture.addEventListener('swipedown', function() {
+    alert('Swiped down!');
+  });
+  gesture.addEventListener('swipeleft', function() {
+    alert('Swiped left!');
+  });
+  gesture.addEventListener('swiperight', function() {
+    alert('Swiped right!');
+  });
+  gesture.addEventListener('tap', function() {
+    alert('Tapped!');
+  });
+</script>
+</body>
+</html>
