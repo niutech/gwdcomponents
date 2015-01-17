@@ -1,0 +1,22 @@
+{
+    "name": "gwdcomponents",
+    "version": "1.2.0",
+    "description": "Google Web Designer Components.",
+    "homepage": "https://github.com/niutech/gwdcomponents",
+    "authors": [
+        "Google"
+    ],
+    "main": "index.html",
+    "keywords": [
+        "google",
+        "google-web-designer",
+        "audio",
+        "youtube",
+        "video",
+        "map",
+        "gallery",
+        "gesture",
+        "custom-elements",
+        "web-components"
+    ]
+}
