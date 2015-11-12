@@ -4,8 +4,9 @@
   <title>Google Web Designer Components Demo</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <!-- custom elements polyfill -->
-  <script src="custom.elements.min.js"></script>
+  <!-- web components library (required) -->
+  <script src="googbase_min.js"></script>
+  <script src="gwd_webcomponents_min.js"></script>
 
   <!-- gwd-taparea -->
   <link href="gwdtaparea_style.css" rel="stylesheet">
@@ -15,9 +16,20 @@
   <link href="gwdgesture_style.css" rel="stylesheet">
   <script src="gwdgesture_min.js"></script>
 
+  <!-- gwd-imagebutton -->
+  <script src="gwdimagebutton_min.js"></script>
+
   <!-- gwd-taptocall -->
   <link href="gwdtaptocall_style.css" rel="stylesheet">
   <script src="gwdtaptocall_min.js"></script>
+
+  <!-- gwd-page (required for gallery) -->
+  <link href="gwdpage_style.css" rel="stylesheet">
+  <script src="gwdpage_min.js"></script>
+
+  <!-- gwd-image (required for gallery) -->
+  <link href="gwdimage_style.css" rel="stylesheet">
+  <script src="gwdimage_min.js"></script>
 
   <!-- gwd-swipegallery -->
   <link href="gwdswipegallery_style.css" rel="stylesheet">
@@ -35,10 +47,6 @@
   <link href="gwd360gallery_style.css" rel="stylesheet">
   <script src="gwd360gallery_min.js"></script>
 
-  <!-- gwd-image in gallery -->
-  <link href="gwdimage_style.css" rel="stylesheet">
-  <script src="gwdimage_min.js"></script>
-
   <!-- gwd-video -->
   <link href="gwdvideo_style.css" rel="stylesheet">
   <script src="gwdvideo_min.js"></script>
@@ -47,18 +55,19 @@
   <link href="gwdyoutube_style.css" rel="stylesheet">
   <script src="gwdyoutube_min.js"></script>
 
+  <!-- gwd-audio -->
+  <script src="gwdaudio_min.js"></script>
+
   <!-- gwd-map -->
   <link href="gwdmap_style.css" rel="stylesheet">
   <script src="gwdmap_min.js"></script>
 
+  <!-- gwd-addtocalendar -->
+  <link href="gwdaddtocalendar_style.css" rel="stylesheet">
+  <script src="gwdaddtocalendar_min.js"></script>
+
   <!-- gwd-iframe -->
   <script src="gwdiframe_min.js"></script>
-
-  <!-- gwd-audio -->
-  <script src="gwdaudio_min.js"></script>
-
-  <!-- gwd-page -->
-  <script src="gwdpage_min.js"></script>
 
   <style type="text/css">
     body {
@@ -70,7 +79,7 @@
     }
     body > div > * {
         position: relative;
-        display: block;
+        display: block !important;
         width: 300px;
         height: 200px;
         border: 1px solid #000;
@@ -87,12 +96,16 @@
   <gwd-gesture touch-action="auto"></gwd-gesture>
 </div>
 <div>
+  gwd-imagebutton
+  <gwd-imagebutton up-image="assets/sample.jpg" over-image="assets/sample2.jpg" down-image="assets/sample.jpg" scaling="cover" bgcolor="" alignment="center"></gwd-imagebutton>
+</div>
+<div>
   gwd-taptocall
   <gwd-taptocall number="0123456798"></gwd-taptocall>
 </div>
 <div>
   gwd-swipegallery
-  <gwd-swipegallery id="swipegallery" scaling="cover" images="assets/sample.jpg,assets/sample2.jpg" start-frame="" transition-duration="" num-frames-to-display=""  frame-snap-interval="" autoplay="" has-navigation="" navigation-thumbnails="" navigation-highlight="" offset="" frame-width="" frame-height="" autoplay-duration=""></gwd-swipegallery>
+  <gwd-swipegallery id="swipegallery" scaling="cover" images="assets/sample.jpg,assets/sample2.jpg" start-frame="" transition-duration="" num-frames-to-display=""  frame-snap-interval="" autoplay="" autoplay-duration="" has-navigation="" navigation-thumbnails="" navigation-highlight="" offset="" frame-width="" frame-height="" swipe-axis="" exit-urls=""></gwd-swipegallery>
 </div>
 <div>
   gwd-gallerynavigation
@@ -100,11 +113,11 @@
 </div>
 <div>
   gwd-carouselgallery
-  <gwd-carouselgallery navigation-highlight="" frame-width="" frame-height="" neighbor-rotation-y="" neighbor-translation-x="" neighbor-translation-y="" neighbor-translation-z=""  show-reflection="" navigation-thumbnails="" has-navigation="" autoplay="" start-frame="" transition-duration="" images="assets/sample.jpg,assets/sample2.jpg"></gwd-carouselgallery>
+  <gwd-carouselgallery scaling="cover" images="assets/sample.jpg,assets/sample2.jpg" start-frame="" transition-duration="" navigation-thumbnails="" navigation-highlight="" frame-width="" frame-height="" neighbor-rotation-y="" neighbor-translation-x="" neighbor-translation-y="" neighbor-translation-z="" show-reflection="" has-navigation="" autoplay=""></gwd-carouselgallery>
 </div>
 <div>
   gwd-360gallery
-  <gwd-360gallery autoplay="" images="assets/sample.jpg,assets/sample2.jpg"></gwd-360gallery>
+  <gwd-360gallery images="assets/sample.jpg,assets/sample2.jpg" autoplay=""></gwd-360gallery>
 </div>
 <div>
   gwd-video
@@ -112,19 +125,25 @@
 </div>
 <div>
   gwd-youtube
-  <gwd-youtube video-url="http://www.youtube.com/watch?v=fqULJBBEVQE" title="" muted="" loop="" pause-on-end="" start-position="" controls="show" theme="light" autoplay=""></gwd-youtube>
+  <gwd-youtube video-url="http://www.youtube.com/watch?v=fqULJBBEVQE" annotations="" related="" title="" muted="" loop="" pause-on-end="" start-position="" controls="show" theme="light" allowfullscreen="" extra-player-args="" autoplay="" preview-duration=""></gwd-youtube>
 </div>
 <div>
   gwd-audio
-  <audio is="gwd-audio" sources="http://techslides.com/demos/samples/sample.wav" controls="" loop="" autoplay="" muted=""></audio>
+  <audio is="gwd-audio" sources="http://techslides.com/demos/samples/sample.wav" gwd-controls="" loop="" autoplay="" muted=""></audio>
 </div>
 <div>
   gwd-map
-  <gwd-map query="" start-latitude="" start-longitude="" fusion-table-id="" client-id="" search-radius="40000" result-limit="" start-zoom="" marker-src="assets/marker_sprite.png"  gps-src="assets/location.png" msg-start-position-prompt="" msg-gps-button-label="" msg-manual-position-button-label="" msg-manual-position-prompt="" msg-manual-position-placeholder="" msg-geocode-failure=""  msg-no-results-found=""></gwd-map>
+  <gwd-map query="" start-latitude="" start-longitude="" fusion-table-id="" client-id="" request-user-location="" search-radius="40000" result-limit="" start-zoom="" marker-src="assets/marker_sprite.png"  gps-src="assets/location.png" msg-start-position-prompt="How would you like us to get your position?" msg-gps-button-label="Use GPS" msg-manual-position-button-label="Enter zip code" msg-manual-position-prompt="Enter your zip code" msg-manual-position-placeholder="eg: 95113"
+  msg-geocode-failure="Your location could not be determined. Please enter a nearby zip code." msg-no-results-found="No results found near you."></gwd-map>
+</div>
+<div>
+  gwd-addtocalendar
+  <gwd-addtocalendar event-title="Title" icalendar="" google="" windows-live="" yahoo="" start-time="18:00" start-date="2015/12/01" end-date="2015/12/31" end-time="23:00"
+  timezone="" location="" description="" bg-color="" font-color="" font-family="" font-size="" font-weight="" highlight-color=""></gwd-addtocalendar>
 </div>
 <div>
   gwd-iframe
-  <iframe is="gwd-iframe" source="http://manda.com/iframe/textblock.html" scrolling="yes"></iframe>
+  <iframe is="gwd-iframe" source="http://example.org" scrolling="yes"></iframe>
 </div>
 <script>
   var taparea = document.getElementsByTagName('gwd-taparea')[0];
