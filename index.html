@@ -62,12 +62,19 @@
   <link href="gwdmap_style.css" rel="stylesheet">
   <script src="gwdmap_min.js"></script>
 
+  <!-- gwd-streetview -->
+  <link href="gwdstreetview_style.css" rel="stylesheet">
+  <script src="gwdstreetview_min.js"></script>
+
   <!-- gwd-addtocalendar -->
   <link href="gwdaddtocalendar_style.css" rel="stylesheet">
   <script src="gwdaddtocalendar_min.js"></script>
 
   <!-- gwd-iframe -->
   <script src="gwdiframe_min.js"></script>
+
+  <!-- gwd-spritesheet -->
+  <script src="gwdspritesheet_min.js"></script>
 
   <style type="text/css">
     body {
@@ -133,17 +140,25 @@
 </div>
 <div>
   gwd-map
-  <gwd-map query="" start-latitude="" start-longitude="" fusion-table-id="" client-id="" request-user-location="" search-radius="40000" result-limit="" start-zoom="" marker-src="assets/marker_sprite.png"  gps-src="assets/location.png" msg-start-position-prompt="How would you like us to get your position?" msg-gps-button-label="Use GPS" msg-manual-position-button-label="Enter zip code" msg-manual-position-prompt="Enter your zip code" msg-manual-position-placeholder="eg: 95113"
+  <gwd-map query="" start-latitude="51.5081149" start-longitude="" fusion-table-id="-0.1280283" client-id="" request-user-location="" search-radius="40000" result-limit="" start-zoom="" marker-src="assets/marker_sprite.png"  gps-src="assets/location.png" msg-start-position-prompt="How would you like us to get your position?" msg-gps-button-label="Use GPS" msg-manual-position-button-label="Enter zip code" msg-manual-position-prompt="Enter your zip code" msg-manual-position-placeholder="eg: 95113"
   msg-geocode-failure="Your location could not be determined. Please enter a nearby zip code." msg-no-results-found="No results found near you."></gwd-map>
 </div>
 <div>
+  gwd-streetview
+  <gwd-streetview latitude="51.5081149" longitude="-0.1280283" interaction=""></gwd-streetview>
+</div>
+<div>
   gwd-addtocalendar
-  <gwd-addtocalendar event-title="Title" icalendar="" google="" windows-live="" yahoo="" start-time="18:00" start-date="2015/12/01" end-date="2015/12/31" end-time="23:00"
+  <gwd-addtocalendar event-title="Title" icalendar="" google="" windows-live="" yahoo="" start-time="18:00" start-date="2017/12/01" end-date="2017/12/31" end-time="23:00"
   timezone="" location="" description="" bg-color="" font-color="" font-family="" font-size="" font-weight="" highlight-color=""></gwd-addtocalendar>
 </div>
 <div>
   gwd-iframe
-  <iframe is="gwd-iframe" source="http://example.org" scrolling="yes"></iframe>
+  <iframe is="gwd-iframe" source="https://example.org" scrolling="yes"></iframe>
+</div>
+<div>
+  gwd-spritesheet
+  <gwd-spritesheet imagesource="assets/sample.jpg" offsetx="0" offsety="0" clipwidth="100" clipheight="100" scaling="cover"></gwd-spritesheet>
 </div>
 <script>
   var taparea = document.getElementsByTagName('gwd-taparea')[0];
